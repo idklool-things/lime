@@ -42,14 +42,14 @@ jobs:
       - name: Configure Android support
         run: |
           haxelib run lime setup -alias -y
-          lime config ANDROID_SDK $ANDROID_HOME
-          lime config ANDROID_NDK_ROOT ${{ steps.setup-ndk.outputs.ndk-path }}
-          lime config JAVA_HOME $JAVA_HOME
-          lime config ANDROID_SETUP true
+          haxelib run lime config ANDROID_SDK $ANDROID_HOME
+          haxelib run lime config ANDROID_NDK_ROOT ${{ steps.setup-ndk.outputs.ndk-path }}
+          haxelib run lime config JAVA_HOME $JAVA_HOME
+          haxelib run lime config ANDROID_SETUP true
 
       - name: Rebuild Lime (Android)
         run: |
-          lime rebuild android -release -nocolor -verbose -nocffi
+          haxelib run lime rebuild android -release -nocolor -verbose -nocffi
 
       - uses: actions/upload-artifact@v4
         with:
