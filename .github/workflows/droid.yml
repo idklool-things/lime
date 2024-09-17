@@ -34,7 +34,6 @@ jobs:
           haxelib install hxcpp 4.2.1 --quiet
           haxelib install format --quiet
           haxelib install hxp --quiet
-          haxelib dev lime $GITHUB_WORKSPACE
 
       - name: Enable HXCPP compile cache
         run: |
